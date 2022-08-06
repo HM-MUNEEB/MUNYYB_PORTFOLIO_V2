@@ -1,9 +1,23 @@
+:root {
+  --BG-COlOR: "#000000";
+  --BG-DIMMED-COLOR: "#0C0C0C";
+  --FONT-MAIN-COLOR: "#00FF24";
+  --FONT-SECONDRY-COLOR: white;
+  --FONT-DIMMED-COLOR: rgba(255, 255, 255, 0.4);
+}
+
+@font-face {
+  font-family: "Monoska";
+  src: url("../public/Fonts/Monoska.ttf");
+  font-style: normal;
+}
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Monoska", sans-serif;
+  color: white;
+  background-color: black;
 }
 
 * {
