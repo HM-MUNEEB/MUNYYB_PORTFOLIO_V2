@@ -1,0 +1,16 @@
+.LogoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.graphicalVector {
+  width: 53.77px;
+  height: 53.77px;
+  background: #00ff24;
+  transform: rotate(120deg);
+}
+.LogoContainer h1 {
+  font-size: 2rem;
+  margin-left: 2rem; 
+}
