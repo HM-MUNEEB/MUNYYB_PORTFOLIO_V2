@@ -1,0 +1,10 @@
+.LogoContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.LogoContainer h1 {
+  font-size: 2rem;
+  margin-left: 2rem;
+}

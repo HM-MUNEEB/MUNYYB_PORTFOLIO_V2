@@ -1,14 +1,24 @@
-import Logo from "../LogoComp/Logo";
 import styles from "./Container.module.css";
-import Image from "next/image";
-import LogoImg from "../../public/logo.png"
+import { useState, useEffect, useRef } from "react";
+import InitialIntro from "../Initial-Intro/InitialIntro";
+import LogoContainer from "../Logo-Container/LogoContainer";
 
 export default function Container() {
+  const [isInitialIntro, setIsInitialIntro] = useState(true);
+
+  setInterval(() => {
+    setIsInitialIntro(false);
+  }, 25000);
   return (
     <div className={styles.MunyybContainer}>
-      {/* <Image src ={LogoImg} width = {40} height ={40}/> */}
-      <div className={styles.typicalTextAnimation}>
-      <Logo />
+      <div className={styles.IntroAndLogoContainer}>
+        {isInitialIntro ? (
+          <div className={styles.typicalTextAnimation}>
+            <InitialIntro />
+          </div>
+        ) : (
+          <LogoContainer />
+        )}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-.LogoContainer {
+.InitialIntroContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,5 +12,5 @@
 }
 .LogoContainer h1 {
   font-size: 2rem;
-  margin-left: 2rem; 
+  margin-left: 2rem;
 }
