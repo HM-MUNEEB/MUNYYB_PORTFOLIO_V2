@@ -1,13 +1,10 @@
 .MunyybContainer {
   height: 100vh;
   width: 100vw;
-  padding: 6%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 .IntroAndLogoContainer {
 }
 .typicalTextAnimation {
+  height: 100%;
+  width: 100%;
 }
