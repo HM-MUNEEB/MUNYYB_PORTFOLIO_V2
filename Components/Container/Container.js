@@ -1,6 +1,7 @@
 import styles from "./Container.module.css";
 import { useState, useEffect, useRef } from "react";
 import InitialIntro from "../Initial-Intro/InitialIntro";
+import NavItems from "../Nav-items/NavItems";
 import LogoContainer from "../Logo-Container/LogoContainer";
 import { gsap } from "gsap";
 
@@ -32,7 +33,10 @@ export default function Container() {
           <InitialIntro />
         </div>
       ) : (
-        <LogoContainer />
+        <>
+          <LogoContainer />
+          <NavItems />
+        </>
       )}
     </div>
   );
