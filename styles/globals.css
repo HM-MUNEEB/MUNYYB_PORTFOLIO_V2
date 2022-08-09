@@ -1,7 +1,7 @@
 :root {
   --BG-COlOR: "#000000";
   --BG-DIMMED-COLOR: "#0C0C0C";
-  --FONT-MAIN-COLOR: "#00FF24";
+  --FONT-MAIN-COLOR: rgba(0, 255, 36, 1);
   --FONT-SECONDRY-COLOR: white;
   --FONT-DIMMED-COLOR: rgba(255, 255, 255, 0.4);
 }

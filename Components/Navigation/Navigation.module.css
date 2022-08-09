@@ -1,2 +1,19 @@
-.NavItems {
+.Navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.NavItems_container {
+  list-style: none;
+}
+.NavItem {
+}
+.Main_Nav {
+  text-decoration: none;
+}
+.Nav_Heading_1 {
+  color: var(--FONT-DIMMED-COLOR);
+}
+.Nav_Heading_1:hover {
+  color: rgba(0, 255, 36, 1);
 }
