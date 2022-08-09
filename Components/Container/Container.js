@@ -22,7 +22,7 @@ export default function Container() {
         duration: 0.5,
       }
     );
-  }, 5000);
+  }, 22000);
 
   useEffect(() => {}, []);
   return (
