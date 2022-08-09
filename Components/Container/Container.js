@@ -1,7 +1,7 @@
 import styles from "./Container.module.css";
 import { useState, useEffect, useRef } from "react";
 import InitialIntro from "../Initial-Intro/InitialIntro";
-import NavItems from "../Nav-items/NavItems";
+import Navigation from "../Navigation/Navigation";
 import LogoContainer from "../Logo-Container/LogoContainer";
 import { gsap } from "gsap";
 
@@ -23,7 +23,7 @@ export default function Container() {
         duration: 0.5,
       }
     );
-  }, 22000);
+  }, 2000);
 
   useEffect(() => {}, []);
   return (
@@ -35,7 +35,7 @@ export default function Container() {
       ) : (
         <>
           <LogoContainer />
-          <NavItems />
+          <Navigation />
         </>
       )}
     </div>
