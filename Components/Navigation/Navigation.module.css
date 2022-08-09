@@ -5,14 +5,21 @@
 }
 .NavItems_container {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .NavItem {
+  margin: 0;
+  padding: 0;
 }
 .Main_Nav {
   text-decoration: none;
 }
 .Nav_Heading_1 {
+  padding: 0;
+  margin: 0;
   color: var(--FONT-DIMMED-COLOR);
+  font-size: 12vh;
 }
 .Nav_Heading_1:hover {
   color: rgba(0, 255, 36, 1);
