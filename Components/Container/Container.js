@@ -7,25 +7,78 @@ import { gsap } from "gsap";
 
 export default function Container() {
   const [isInitialIntro, setIsInitialIntro] = useState(true);
+  const [isNavigation, setIsNavigation] = useState(false);
   const InitialIntroRed = useRef();
+  const LogoContainerRef = useRef();
+  const NavigationRef = useRef();
+
+  function afterAnim() {
+    setIsNavigation(true);
+  }
 
   setInterval(() => {
     setIsInitialIntro(false);
-    gsap.fromTo(
-      InitialIntroRed.current,
+  }, 2000);
+
+  useEffect(() => {
+    var h = window.innerHeight / 2 - 10;
+    var w = window.innerWidth / 2 - 100;
+
+    //Timeline Setup
+    var tl = gsap.timeline({
+      repeat: 0,
+      // onComplete: () => {
+      //   setIsNavigation(true);
+      //   console.log("COMPLETED!");
+      // },
+    });
+
+    tl.eventCallback("onComplete", () => {
+      setIsNavigation(true);
+      console.log("COMPLETED!");
+    });
+
+    //Fading In transition
+    tl.fromTo(
+      LogoContainerRef.current,
       {
         opacity: 0,
-        y: -25,
+        y: h - 25,
       },
       {
         opacity: 1,
-        y: 0,
+        y: h,
         duration: 0.5,
       }
     );
-  }, 2000);
-
-  useEffect(() => {}, []);
+    //Placing logo to original position
+    tl.fromTo(
+      LogoContainerRef.current,
+      {
+        opacity: 1,
+        y: h,
+        x: w,
+      },
+      {
+        y: 0,
+        x: 0,
+        duration: 0.5,
+        ease: "back.easeOut",
+      }
+    );
+    //Navigation Status
+    tl.fromTo(
+      NavigationRef.current,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 0.5,
+        ease: "back.easeOut",
+      }
+    );
+  }, [isInitialIntro]);
   return (
     <div className={styles.MunyybContainer}>
       {isInitialIntro ? (
@@ -34,8 +87,16 @@ export default function Container() {
         </div>
       ) : (
         <>
-          <LogoContainer />
-          <Navigation />
+          <div ref={LogoContainerRef}>
+            <LogoContainer />
+          </div>
+          {isNavigation ? (
+            <div ref={NavigationRef}>
+              <Navigation />
+            </div>
+          ) : (
+            ""
+          )}
         </>
       )}
     </div>
