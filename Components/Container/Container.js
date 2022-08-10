@@ -25,13 +25,7 @@ export default function Container() {
     var w = window.innerWidth / 2 - 100;
 
     //Timeline Setup
-    var tl = gsap.timeline({
-      repeat: 0,
-      // onComplete: () => {
-      //   setIsNavigation(true);
-      //   console.log("COMPLETED!");
-      // },
-    });
+    var tl = gsap.timeline({ repeat: 0 });
 
     tl.eventCallback("onComplete", () => {
       setIsNavigation(true);
@@ -48,6 +42,7 @@ export default function Container() {
       {
         opacity: 1,
         y: h,
+        autoAlpha: 1,
         duration: 0.5,
       }
     );
@@ -64,7 +59,8 @@ export default function Container() {
         x: 0,
         duration: 0.5,
         ease: "back.easeOut",
-      }
+      },
+      2
     );
     //Navigation Status
     tl.fromTo(
@@ -76,7 +72,8 @@ export default function Container() {
         opacity: 1,
         duration: 0.5,
         ease: "back.easeOut",
-      }
+      },
+      ">1"
     );
   }, [isInitialIntro]);
   return (
