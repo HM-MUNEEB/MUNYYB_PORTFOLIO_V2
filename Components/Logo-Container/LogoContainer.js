@@ -40,9 +40,11 @@ export default function LogoContainer() {
     );
   }, []);
   return (
-    <div className={styles.LogoContainer} ref={LogoContainerRef}>
-      <Image src={LogoImg} width={40} height={40} />
-      <h1>MUNYYB.</h1>
-    </div>
+    <header className={styles.Header}>
+      <div className={styles.LogoContainer} ref={LogoContainerRef}>
+        <Image src={LogoImg} width={40} height={40} />
+        <h1>MUNYYB.</h1>
+      </div>
+    </header>
   );
 }

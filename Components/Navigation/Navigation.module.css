@@ -1,8 +1,14 @@
 .Navigation {
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.Navigation_Container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: inherit;
 }
 .NavItems_container {
   list-style: none;
@@ -20,6 +26,7 @@
 .Nav_Heading_1 {
   color: var(--FONT-DIMMED-COLOR);
   font-size: 10vw;
+  font-weight: 400;
 }
 .Nav_Heading_1:hover {
   color: rgba(0, 255, 36, 1);
