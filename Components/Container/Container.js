@@ -53,7 +53,7 @@ export default function Container() {
       {
         opacity: 1,
         y: h,
-        x: w,
+        x: w - 100,
       },
       {
         y: 0,
@@ -85,7 +85,7 @@ export default function Container() {
         </div>
       ) : (
         <>
-          <div ref={LogoContainerRef}>
+          <div ref={LogoContainerRef} className={styles.logoContainerStack}>
             <LogoContainer />
           </div>
           {isNavigation ? (
