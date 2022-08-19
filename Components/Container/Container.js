@@ -53,7 +53,7 @@ export default function Container() {
       {
         opacity: 1,
         y: h,
-        x: w - 100,
+        x: w,
       },
       {
         y: 0,
