@@ -8,7 +8,7 @@ import { gsap } from "gsap";
 export default function Container() {
   const [isInitialIntro, setIsInitialIntro] = useState(true);
   const [isNavigation, setIsNavigation] = useState(false);
-  const InitialIntroRed = useRef();
+  const [check, setCheck] = useState(false);
   const LogoContainerRef = useRef();
   const NavigationRef = useRef();
 
@@ -18,6 +18,7 @@ export default function Container() {
 
   setInterval(() => {
     setIsInitialIntro(false);
+    setCheck(true);
   }, 2000);
 
   useEffect(() => {
@@ -75,11 +76,11 @@ export default function Container() {
       },
       ">1"
     );
-  }, [isInitialIntro]);
+  }, [check]);
   return (
     <div className={styles.MunyybContainer}>
       {isInitialIntro ? (
-        <div className={styles.typicalTextAnimation} ref={InitialIntroRed}>
+        <div className={styles.typicalTextAnimation}>
           <InitialIntro />
         </div>
       ) : (
