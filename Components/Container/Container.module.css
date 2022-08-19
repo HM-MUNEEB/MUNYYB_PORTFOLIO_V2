@@ -1,7 +1,7 @@
 .MunyybContainer {
   height: 100vh;
   width: 100vw;
-  padding: 4vw;
+  padding: 3vw;
 }
 .IntroAndLogoContainer {
 }
@@ -10,6 +10,4 @@
   width: 100%;
 }
 .logoContainerStack {
-  margin-left: 6%;
-  margin-top: 2rem;
 }

@@ -38,11 +38,11 @@ export default function Container() {
       LogoContainerRef.current,
       {
         opacity: 0,
-        y: h - 25,
+        y: h - 100,
       },
       {
         opacity: 1,
-        y: h,
+        y: h - 75,
         autoAlpha: 1,
         duration: 0.5,
       }
@@ -52,8 +52,7 @@ export default function Container() {
       LogoContainerRef.current,
       {
         opacity: 1,
-        y: h,
-        x: w,
+        x: w - w * (3 / 100),
       },
       {
         y: 0,
