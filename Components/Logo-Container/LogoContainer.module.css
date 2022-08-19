@@ -5,8 +5,14 @@
   flex-direction: row;
   width: 12rem;
 }
+.LogoImgContainer {
+  width: 10vw;
+}
+.LogoImg {
+  height: 2.5vw;
+}
 .LogoContainer h1 {
-  font-size: 2rem;
+  font-size: 2.5vw;
   margin-left: 1rem;
   width: 10rem;
 }
