@@ -4,6 +4,7 @@ import InitialIntro from "../Initial-Intro/InitialIntro";
 import Navigation from "../Navigation/Navigation";
 import LogoContainer from "../Logo-Container/LogoContainer";
 import { gsap } from "gsap";
+import Footer from "../footer/footer";
 
 export default function Container() {
   const [isInitialIntro, setIsInitialIntro] = useState(true);
@@ -90,6 +91,7 @@ export default function Container() {
           {isNavigation ? (
             <div ref={NavigationRef}>
               <Navigation />
+              <Footer />
             </div>
           ) : (
             ""
