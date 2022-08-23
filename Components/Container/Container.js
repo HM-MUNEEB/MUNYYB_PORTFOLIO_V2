@@ -20,7 +20,7 @@ export default function Container() {
   setInterval(() => {
     setIsInitialIntro(false);
     setCheck(true);
-  }, 2000);
+  }, 22000);
 
   useEffect(() => {
     var h = window.innerHeight / 2 - 10;
