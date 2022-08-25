@@ -7,7 +7,7 @@
 .MunyybContainer {
   height: 100vh;
   width: 100vw;
-  padding: 3vw;
+  padding: 3vh;
   display: flex;
   justify-content: space-between;
 }
@@ -20,13 +20,4 @@
 .logoContainerStack {
 }
 .MatrixRainFallBackground {
-  z-index: 0;
-  opacity: 1;
-  background: rgb(2, 0, 36);
-  background: radial-gradient(
-    circle,
-    rgba(2, 0, 36, 0) 0%,
-    rgba(0, 0, 0, 1) 100%,
-    rgba(0, 212, 255, 1) 100%
-  );
 }

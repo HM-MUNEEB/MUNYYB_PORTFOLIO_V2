@@ -11,7 +11,7 @@ export default function LogoContainer() {
         {/* <div className={styles.LogoImgContainer}>
           <Image src={LogoImg} className={styles.LogoImg} height={40} />
         </div> */}
-        <h1>MUNYYB.</h1>
+        <p>MUNYYB.</p>
       </div>
     </header>
   );

@@ -1,5 +1,5 @@
 .Navigation {
-  height: 100%;
+  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -13,11 +13,8 @@
 }
 .NavItems_container {
   list-style: none;
-  display: flex;
-  flex-direction: column;
 }
 .NavItem {
-  height: 7.77778vw;
   margin: 0.41667vw 0;
   line-height: 7.63889vw;
 }
