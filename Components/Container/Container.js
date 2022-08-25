@@ -5,6 +5,7 @@ import Navigation from "../Navigation/Navigation";
 import LogoContainer from "../Logo-Container/LogoContainer";
 import { gsap } from "gsap";
 import Footer from "../footer/footer";
+import BackgroundCanvas from "../Background/BackgroundCanvas";
 
 export default function Container() {
   const [isInitialIntro, setIsInitialIntro] = useState(true);
@@ -78,28 +79,31 @@ export default function Container() {
     );
   }, [check]);
   return (
-    <div className={styles.MunyybContainer}>
-      {isInitialIntro ? (
-        <div className={styles.typicalTextAnimation}>
-          <InitialIntro />
-        </div>
-      ) : (
-        <>
-          <div ref={LogoContainerRef} className={styles.logoContainerStack}>
-            <LogoContainer />
-            <div ref={NavigationRef}>
-              <Footer />
-            </div>
+    <>
+      <div className={styles.MunyybContainer}>
+        {isInitialIntro ? (
+          <div className={styles.typicalTextAnimation}>
+            <InitialIntro />
           </div>
-          {isNavigation ? (
-            <div ref={NavigationRef}>
-              <Navigation />
+        ) : (
+          <>
+            <div ref={LogoContainerRef} className={styles.logoContainerStack}>
+              <LogoContainer />
+              <div ref={NavigationRef}>
+                <Footer />
+              </div>
             </div>
-          ) : (
-            ""
-          )}
-        </>
-      )}
-    </div>
+            {isNavigation ? (
+              <div ref={NavigationRef}>
+                <Navigation />
+              </div>
+            ) : (
+              ""
+            )}
+          </>
+        )}
+      </div>
+      <BackgroundCanvas />
+    </>
   );
 }
