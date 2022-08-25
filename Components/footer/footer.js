@@ -1,21 +1,25 @@
 import styles from "./footer.module.css";
-import { AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <div className={styles.footerContainer}>
       <ul className={styles.footerList}>
         <li>
-          <a className={styles.listItems}>
-            <AiOutlineLinkedin />
+          <Link
+            href="https://github.com/HM-MUNEEB"
+            className={styles.listItems}
+          >
             <p>linkedin</p>
-          </a>
+          </Link>
         </li>
         <li>
-          <a className={styles.listItems}>
-            <AiOutlineGithub />
+          <Link
+            href="https://www.linkedin.com/in/munyyb/"
+            className={styles.listItems}
+          >
             <p>Github</p>
-          </a>
+          </Link>
         </li>
       </ul>
     </div>

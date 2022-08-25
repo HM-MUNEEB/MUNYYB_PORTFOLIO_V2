@@ -12,14 +12,16 @@
   margin-left: 1rem;
 }
 .listItems {
-  opacity: 0.4;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  opacity: 1;
 }
 .listItems p {
-  margin-left: 0.4rem;
+  font-size: 1vw;
+  margin-left: 1vw;
 }
 .listItems:hover {
   opacity: 1;
+}
+.iconsPlaceHolder {
+  height: 1vw;
+  width: 1vw;
 }
