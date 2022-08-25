@@ -82,7 +82,7 @@ const RainStream = (props) => {
     <div
       style={{
         fontFamily: "matrixFont",
-        color: "var(--FONT-MAIN-COLOR)",
+        color: "rgba(0, 255, 36, 0.1)",
         writingMode: "vertical-rl",
         textOrientation: "upright",
         userSelect: "none",
