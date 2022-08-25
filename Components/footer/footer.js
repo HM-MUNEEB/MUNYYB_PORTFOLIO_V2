@@ -1,11 +1,15 @@
 import styles from "./footer.module.css";
+import { AiOutlineLinkedin } from "react-icons/ai";
 
 export default function Footer() {
   return (
     <div className={styles.footerContainer}>
-      <ul>
+      <ul className={styles.footerList}>
         <li>
-          <a>linkedin</a>
+          <a>
+            <AiOutlineLinkedin />
+            linkedin
+          </a>
         </li>
         <li>
           <a>Github</a>

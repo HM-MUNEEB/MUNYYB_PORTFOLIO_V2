@@ -1,8 +1,9 @@
 .footerContainer {
   position: absolute;
   bottom: 0;
-  display: flex;
-  flex-direction: row;
+}
+.footerList {
+  display: inline;
   list-style: none;
 }
 .footerContainer h1 {
