@@ -29,5 +29,5 @@
   font-weight: 400;
 }
 .Nav_Heading_1:hover {
-  color: rgba(0, 255, 36, 1);
+  color: var(--FONT-MAIN-COLOR);
 }

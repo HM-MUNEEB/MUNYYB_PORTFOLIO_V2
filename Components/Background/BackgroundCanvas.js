@@ -82,7 +82,7 @@ const RainStream = (props) => {
     <div
       style={{
         fontFamily: "matrixFont",
-        color: "#20c20e",
+        color: "var(--FONT-MAIN-COLOR)",
         writingMode: "vertical-rl",
         textOrientation: "upright",
         userSelect: "none",
@@ -113,26 +113,41 @@ const RainStream = (props) => {
     </div>
   );
 };
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height,
+  };
+}
+
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState("");
+
+  useEffect(() => {
+    setWindowDimensions(getWindowDimensions());
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowDimensions;
+}
 
 const MatrixRain = (props) => {
   const containerRef = useRef(null);
-  const [containerSize, setContainerSize] = useState(null); // ?{width, height}
+  const { height, width } = useWindowDimensions();
 
-  useEffect(() => {
-    const boundingClientRect = containerRef.current.getBoundingClientRect();
-    setContainerSize({
-      width: boundingClientRect.width,
-      height: boundingClientRect.height,
-    });
-  }, []);
-
-  const streamCount = containerSize ? Math.floor(containerSize.width / 26) : 0;
+  const streamCount = width ? Math.floor(width / 26) : 0;
 
   return (
     <div
       className={styles.BackgroundCanvas}
       style={{
-        position: "fixed",
+        position: "absolute",
         top: 0,
         left: 0,
         bottom: 0,
@@ -142,13 +157,11 @@ const MatrixRain = (props) => {
         flexDirection: "row",
         justifyContent: "center",
         zIndex: 0,
-        height: "100vh",
-        width: "100vw",
       }}
       ref={containerRef}
     >
       {new Array(streamCount).fill().map((_) => (
-        <RainStream height={containerSize?.height} />
+        <RainStream height={height} />
       ))}
     </div>
   );
