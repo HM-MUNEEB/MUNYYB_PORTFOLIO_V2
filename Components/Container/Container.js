@@ -87,11 +87,13 @@ export default function Container() {
         <>
           <div ref={LogoContainerRef} className={styles.logoContainerStack}>
             <LogoContainer />
+            <div ref={NavigationRef}>
+              <Footer />
+            </div>
           </div>
           {isNavigation ? (
             <div ref={NavigationRef}>
               <Navigation />
-              <Footer />
             </div>
           ) : (
             ""

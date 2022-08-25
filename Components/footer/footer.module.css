@@ -5,7 +5,21 @@
 .footerList {
   display: inline;
   list-style: none;
+  display: flex;
+  flex-direction: row;
 }
-.footerContainer h1 {
-  color: white;
+.footerList li {
+  margin-left: 1rem;
+}
+.listItems {
+  opacity: 0.4;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.listItems p {
+  margin-left: 0.4rem;
+}
+.listItems:hover {
+  opacity: 1;
 }
