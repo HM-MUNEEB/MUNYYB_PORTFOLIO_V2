@@ -80,28 +80,30 @@ export default function Container() {
   }, [check]);
   return (
     <>
-      <div className={styles.MunyybContainer}>
-        {isInitialIntro ? (
-          <div className={styles.typicalTextAnimation}>
-            <InitialIntro />
-          </div>
-        ) : (
-          <>
-            <div ref={LogoContainerRef} className={styles.logoContainerStack}>
-              <LogoContainer />
-              <div ref={NavigationRef}>
-                <Footer />
-              </div>
+      <div className={styles.Munyyb}>
+        <div className={styles.MunyybContainer}>
+          {isInitialIntro ? (
+            <div className={styles.typicalTextAnimation}>
+              <InitialIntro />
             </div>
-            {isNavigation ? (
-              <div ref={NavigationRef}>
-                <Navigation />
+          ) : (
+            <>
+              <div ref={LogoContainerRef} className={styles.logoContainerStack}>
+                <LogoContainer />
+                <div ref={NavigationRef}>
+                  <Footer />
+                </div>
               </div>
-            ) : (
-              ""
-            )}
-          </>
-        )}
+              {isNavigation ? (
+                <div ref={NavigationRef}>
+                  <Navigation />
+                </div>
+              ) : (
+                ""
+              )}
+            </>
+          )}
+        </div>
       </div>
       <div className={styles.MatrixRainFallBackground}>
         <BackgroundCanvas />

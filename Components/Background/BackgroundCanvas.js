@@ -7,7 +7,7 @@ import styles from "./BackgroundCanvas.module.css";
 const VALID_CHARS = `abcdefghijklmnopqrstuvwxyz0123456789$+-*/=%"'#&_(),.;:?!\\|{}<>[]^~`;
 const STREAM_MUTATION_ODDS = 0.02;
 
-const MIN_STREAM_SIZE = 15;
+const MIN_STREAM_SIZE = 10;
 const MAX_STREAM_SIZE = 50;
 
 const MIN_INTERVAL_DELAY = 50;
@@ -99,7 +99,7 @@ const RainStream = (props) => {
           style={{
             marginTop: -12,
             // Reduce opacity for last chars
-            opacity: index < 6 ? 0.1 + index * 0.15 : 1,
+            opacity: index < 6 ? 0.1 + index * 0.1 : 1,
             color: index === stream.length - 1 ? "#fff" : undefined,
             textShadow:
               index === stream.length - 1
@@ -161,7 +161,7 @@ const MatrixRain = (props) => {
       ref={containerRef}
     >
       {new Array(streamCount).fill().map((_) => (
-        <RainStream height={height} />
+        <RainStream height={height} width={width} />
       ))}
     </div>
   );

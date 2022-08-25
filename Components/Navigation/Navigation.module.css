@@ -3,6 +3,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 9;
 }
 .Navigation_Container {
   display: flex;
