@@ -103,7 +103,9 @@ export default function Container() {
           </>
         )}
       </div>
-      <BackgroundCanvas />
+      <div className={styles.MatrixRainFallBackground}>
+        <BackgroundCanvas />
+      </div>
     </>
   );
 }

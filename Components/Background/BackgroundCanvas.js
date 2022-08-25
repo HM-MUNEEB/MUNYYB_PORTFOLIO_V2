@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useRef, useState } from "react";
 import useInterval from "@use-it/interval";
+import styles from "./BackgroundCanvas.module.css";
 
 // Constants
 const VALID_CHARS = `abcdefghijklmnopqrstuvwxyz0123456789$+-*/=%"'#&_(),.;:?!\\|{}<>[]^~`;
@@ -129,8 +130,8 @@ const MatrixRain = (props) => {
 
   return (
     <div
+      className={styles.BackgroundCanvas}
       style={{
-        background: "black",
         position: "fixed",
         top: 0,
         left: 0,
@@ -140,6 +141,9 @@ const MatrixRain = (props) => {
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
+        zIndex: 0,
+        height: "100vh",
+        width: "100vw",
       }}
       ref={containerRef}
     >
