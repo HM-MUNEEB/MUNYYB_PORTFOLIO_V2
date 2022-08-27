@@ -29,3 +29,36 @@
 .Nav_Heading_1:hover {
   color: var(--FONT-MAIN-COLOR);
 }
+@media screen and (max-width: 700px) {
+  .NavItem {
+    margin: 0.41667vw 0;
+    line-height: 10.63889vw;
+  }
+  .Nav_Heading_1 {
+    color: var(--FONT-DIMMED-COLOR);
+    font-size: 14vw;
+    font-weight: 400;
+  }
+}
+@media screen and (max-width: 500px) {
+  .NavItem {
+    margin: 0.41667vw 0;
+    line-height: 12.63889vw;
+  }
+  .Nav_Heading_1 {
+    color: var(--FONT-DIMMED-COLOR);
+    font-size: 16vw;
+    font-weight: 400;
+  }
+}
+@media screen and (max-width: 400px) {
+  .NavItem {
+    margin: 0.41667vw 0;
+    line-height: 18.63889vw;
+  }
+  .Nav_Heading_1 {
+    color: var(--FONT-DIMMED-COLOR);
+    font-size: 20vw;
+    font-weight: 400;
+  }
+}
