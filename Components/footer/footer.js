@@ -6,20 +6,22 @@ export default function Footer() {
     <div className={styles.footerContainer}>
       <ul className={styles.footerList}>
         <li>
-          <Link
-            href="https://github.com/HM-MUNEEB"
+          <a
+            href="https://www.linkedin.com/in/munyyb/"
+            target="_blank"
             className={styles.listItems}
           >
             <p>linkedin</p>
-          </Link>
+          </a>
         </li>
         <li>
-          <Link
-            href="https://www.linkedin.com/in/munyyb/"
+          <a
+            href="https://github.com/HM-MUNEEB"
+            target="_blank"
             className={styles.listItems}
           >
             <p>Github</p>
-          </Link>
+          </a>
         </li>
       </ul>
     </div>
