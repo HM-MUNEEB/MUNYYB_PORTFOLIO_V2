@@ -106,7 +106,7 @@ export default function Container() {
         </div>
       </div>
       <div className={styles.MatrixRainFallBackground}>
-        <BackgroundCanvas />
+        {isNavigation ? <BackgroundCanvas /> : ""}
       </div>
     </>
   );
