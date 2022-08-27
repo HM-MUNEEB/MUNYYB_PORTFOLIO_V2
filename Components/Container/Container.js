@@ -95,7 +95,7 @@ export default function Container() {
                 </div>
               </div>
               {isNavigation ? (
-                <div ref={NavigationRef}>
+                <div ref={NavigationRef} className={styles.NavigationContainer}>
                   <Navigation />
                 </div>
               ) : (

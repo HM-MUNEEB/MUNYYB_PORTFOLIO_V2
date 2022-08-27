@@ -18,6 +18,10 @@
   width: 100%;
 }
 .logoContainerStack {
+  z-index: 2;
+}
+.NavigationContainer {
+  z-index: 1;
 }
 .MatrixRainFallBackground {
 }
