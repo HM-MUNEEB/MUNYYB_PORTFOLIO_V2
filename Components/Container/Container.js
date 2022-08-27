@@ -6,22 +6,37 @@ import LogoContainer from "../Logo-Container/LogoContainer";
 import { gsap } from "gsap";
 import Footer from "../footer/footer";
 import BackgroundCanvas from "../Background/BackgroundCanvas";
+import { getCookies, setCookie, hasCookie } from "cookies-next";
 
 export default function Container() {
-  const [isInitialIntro, setIsInitialIntro] = useState(true);
+  const [isInitialIntro, setIsInitialIntro] = useState("");
   const [isNavigation, setIsNavigation] = useState(false);
   const [check, setCheck] = useState(false);
   const LogoContainerRef = useRef();
   const NavigationRef = useRef();
 
+  useEffect(() => {
+    console.log("isCookies: ", getCookies("MunyybInitialTouchDown"));
+    if (hasCookie("MunyybInitialTouchDown")) {
+      setIsInitialIntro(true);
+    } else {
+      setIsInitialIntro(false);
+    }
+  }, []);
+
   function afterAnim() {
     setIsNavigation(true);
   }
-
-  setInterval(() => {
-    setIsInitialIntro(false);
-    setCheck(true);
-  }, 2000);
+  if (isInitialIntro == false) {
+    setInterval(() => {
+      setIsInitialIntro(true);
+      setCheck(true);
+      setCookie("MunyybInitialTouchDown", "Done", {
+        maxAge: 30 * 24 * 60 * 60,
+        path: "/",
+      });
+    }, 22000);
+  }
 
   useEffect(() => {
     var h = window.innerHeight / 2 - 10;
@@ -46,6 +61,7 @@ export default function Container() {
         opacity: 1,
         y: h - 75,
         autoAlpha: 1,
+
         duration: 0.5,
       }
     );
@@ -77,12 +93,12 @@ export default function Container() {
       },
       ">1"
     );
-  }, [check]);
+  }, []);
   return (
     <>
       <div className={styles.Munyyb}>
         <div className={styles.MunyybContainer}>
-          {isInitialIntro ? (
+          {isInitialIntro === false ? (
             <div className={styles.typicalTextAnimation}>
               <InitialIntro />
             </div>

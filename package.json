@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@use-it/interval": "^1.0.0",
+    "cookies-next": "^2.1.1",
     "gsap": "^3.10.4",
     "next": "12.2.4",
     "react": "18.2.0",
