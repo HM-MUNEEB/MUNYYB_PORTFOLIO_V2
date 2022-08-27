@@ -1,12 +1,11 @@
 .Munyyb {
   height: 100vh;
   width: 100vw;
-  position: absolute;
   z-index: 10;
 }
 .MunyybContainer {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   padding: 3vh;
   display: flex;
   justify-content: space-between;

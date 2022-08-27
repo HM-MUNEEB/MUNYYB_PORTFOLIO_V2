@@ -19,6 +19,8 @@ body {
   color: white;
   background-color: black;
   overflow: hidden;
+  position: fixed;
+  top: 0;
 }
 
 * {
