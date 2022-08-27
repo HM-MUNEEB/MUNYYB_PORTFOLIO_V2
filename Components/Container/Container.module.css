@@ -16,8 +16,13 @@
   height: 100%;
   width: 100%;
 }
-.logoContainerStack {
+.Stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   z-index: 2;
+}
+.Footer {
 }
 .NavigationContainer {
   z-index: 1;

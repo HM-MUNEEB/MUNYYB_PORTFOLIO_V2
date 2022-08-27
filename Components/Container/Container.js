@@ -88,7 +88,7 @@ export default function Container() {
       },
       {
         opacity: 1,
-        duration: 0.5,
+        duration: 1,
         ease: "back.easeOut",
       },
       ">1"
@@ -104,19 +104,24 @@ export default function Container() {
             </div>
           ) : (
             <>
-              <div ref={LogoContainerRef} className={styles.logoContainerStack}>
-                <LogoContainer />
-                <div ref={NavigationRef}>
-                  <Footer />
+              <div className={styles.Stack}>
+                <div
+                  className={styles.logoContainerStack}
+                  ref={LogoContainerRef}
+                >
+                  <LogoContainer />
                 </div>
+                {isNavigation ? (
+                  <div ref={NavigationRef} className={styles.Footer}>
+                    <Footer />
+                  </div>
+                ) : (
+                  ""
+                )}
               </div>
-              {isNavigation ? (
-                <div ref={NavigationRef} className={styles.NavigationContainer}>
-                  <Navigation />
-                </div>
-              ) : (
-                ""
-              )}
+              <div ref={NavigationRef} className={styles.NavigationContainer}>
+                <Navigation />
+              </div>
             </>
           )}
         </div>
