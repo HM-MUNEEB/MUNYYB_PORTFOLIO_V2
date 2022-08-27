@@ -80,18 +80,9 @@ const RainStream = (props) => {
 
   return (
     <div
+      className={styles.RainFallStream}
       style={{
-        fontFamily: "matrixFont",
-        color: "rgba(0, 255, 36, 0.1)",
-        writingMode: "vertical-rl",
-        textOrientation: "upright",
-        userSelect: "none",
-        whiteSpace: "nowrap",
         marginTop: topPadding,
-        marginLeft: -15,
-        marginRight: -15,
-        textShadow: "0px 0px 8px rgba(32, 194, 14, 0.8)",
-        fontSize: 50,
       }}
     >
       {stream.map((char, index) => (
@@ -144,22 +135,7 @@ const MatrixRain = (props) => {
   const streamCount = width ? Math.floor(width / 26) : 0;
 
   return (
-    <div
-      className={styles.BackgroundCanvas}
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        bottom: 0,
-        right: 0,
-        overflow: "ignore",
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        zIndex: 0,
-      }}
-      ref={containerRef}
-    >
+    <div className={styles.BackgroundCanvas} ref={containerRef}>
       {new Array(streamCount).fill().map((_) => (
         <RainStream height={height} width={width} />
       ))}
