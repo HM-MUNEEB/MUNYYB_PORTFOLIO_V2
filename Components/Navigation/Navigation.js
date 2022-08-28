@@ -8,9 +8,9 @@ export default function Navigation() {
       <div className={styles.Navigation_Container}>
         <ul className={styles.NavItems_container}>
           <li className={styles.NavItem}>
-            <a className={styles.Main_Nav}>
+            <Link href="./work" className={styles.Main_Nav}>
               <p className={styles.Nav_Heading_1}>Work</p>
-            </a>
+            </Link>
           </li>
           <li className={styles.NavItem}>
             <a className={styles.Main_Nav}>
