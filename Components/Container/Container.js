@@ -8,7 +8,7 @@ import Footer from "../footer/footer";
 import BackgroundCanvas from "../Background/BackgroundCanvas";
 import { getCookies, setCookie, hasCookie } from "cookies-next";
 
-export default function Container() {
+export default function Container({ children }) {
   const [isInitialIntro, setIsInitialIntro] = useState("");
   const [isNavigation, setIsNavigation] = useState(false);
   const [check, setCheck] = useState(false);
@@ -119,6 +119,7 @@ export default function Container() {
                   ""
                 )}
               </div>
+              <div className={styles.Pages}>{children}</div>
               <div ref={NavigationRef} className={styles.NavigationContainer}>
                 <Navigation />
               </div>
