@@ -4,11 +4,10 @@ import styles from "./pages.module.css";
 
 export default function Pages({ children }, props) {
   const PagesRef = useRef();
-  useEffect(() => {
+  const landingTransition = () => {
     var h = window.innerHeight;
     var w = window.innerWidth;
     //mount
-    console.log(props.pageRoute);
     var tl = gsap.timeline({ repeat: 0 });
 
     tl.eventCallback("onComplete", () => {
@@ -29,7 +28,10 @@ export default function Pages({ children }, props) {
         ease: "back.easeOut",
       }
     );
-  }, []);
+  };
+  useEffect(() => {
+    landingTransition();
+  });
   return (
     <div className={styles.PagesContainer} ref={PagesRef}>
       {children}
