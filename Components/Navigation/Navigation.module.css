@@ -19,6 +19,9 @@
   margin: 0.41667vw 0;
   line-height: 7.63889vw;
 }
+.NavItem:hover {
+  cursor: pointer;
+}
 .Main_Nav {
   text-decoration: none;
 }
