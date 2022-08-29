@@ -7,8 +7,10 @@ import { gsap } from "gsap";
 import Footer from "../footer/footer";
 import BackgroundCanvas from "../Background/BackgroundCanvas";
 import { getCookies, setCookie, hasCookie } from "cookies-next";
+import { useRouter } from "next/router";
 
 export default function Container({ children }) {
+  const Router = useRouter();
   const [isInitialIntro, setIsInitialIntro] = useState("");
   const [isNavigation, setIsNavigation] = useState(false);
   const [check, setCheck] = useState(false);
@@ -111,17 +113,43 @@ export default function Container({ children }) {
       tl.fromTo(
         PagesRef.current,
         {
-          y: h,
+          x: w,
         },
         {
           opacity: 1,
-          y: 0,
+          x: 0,
+          autoAlpha: 1,
+          duration: 0.5,
+        }
+      );
+    } else if (pageRoute == null) {
+      console.log(pageRoute);
+      var tl = gsap.timeline({ repeat: 0 });
+
+      tl.eventCallback("onComplete", () => {
+        console.log("PAGE TRANSITION  COMPLETED!");
+      });
+
+      //Fading In transition
+      tl.fromTo(
+        PagesRef.current,
+        {
+          x: 0,
+        },
+        {
+          opacity: 1,
+          x: w,
           autoAlpha: 1,
           duration: 0.5,
         }
       );
     }
   }, [pageRoute]);
+  useEffect(() => {
+    if (Router.asPath === "/") {
+      setPageRoute(null);
+    }
+  }, [Router.asPath]);
   return (
     <>
       <div className={styles.Munyyb}>
