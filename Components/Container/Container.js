@@ -12,8 +12,10 @@ export default function Container({ children }) {
   const [isInitialIntro, setIsInitialIntro] = useState("");
   const [isNavigation, setIsNavigation] = useState(false);
   const [check, setCheck] = useState(false);
+  const [pageRoute, setPageRoute] = useState("");
   const LogoContainerRef = useRef();
   const NavigationRef = useRef();
+  const PagesRef = useRef();
 
   useEffect(() => {
     console.log("isCookies: ", getCookies("MunyybInitialTouchDown"));
@@ -94,6 +96,32 @@ export default function Container({ children }) {
       ">1"
     );
   }, []);
+  useEffect(() => {
+    var h = window.innerHeight;
+    var w = window.innerWidth;
+    if (pageRoute == "work") {
+      console.log(pageRoute);
+      var tl = gsap.timeline({ repeat: 0 });
+
+      tl.eventCallback("onComplete", () => {
+        console.log("PAGE TRANSITION  COMPLETED!");
+      });
+
+      //Fading In transition
+      tl.fromTo(
+        PagesRef.current,
+        {
+          y: h,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.5,
+        }
+      );
+    }
+  }, [pageRoute]);
   return (
     <>
       <div className={styles.Munyyb}>
@@ -119,9 +147,11 @@ export default function Container({ children }) {
                   ""
                 )}
               </div>
-              <div className={styles.Pages}>{children}</div>
+              <div className={styles.Pages} ref={PagesRef}>
+                {children}
+              </div>
               <div ref={NavigationRef} className={styles.NavigationContainer}>
-                <Navigation />
+                <Navigation setPageRoute={setPageRoute} />
               </div>
             </>
           )}
