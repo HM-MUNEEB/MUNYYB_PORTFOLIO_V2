@@ -102,6 +102,7 @@ export default function Container({ children }) {
     var h = window.innerHeight;
     var w = window.innerWidth;
     if (pageRoute == "work") {
+      //mount
       console.log(pageRoute);
       var tl = gsap.timeline({ repeat: 0 });
 
@@ -120,9 +121,11 @@ export default function Container({ children }) {
           x: 0,
           autoAlpha: 1,
           duration: 0.5,
+          ease: "back.easeOut",
         }
       );
     } else if (pageRoute == null) {
+      //unmount
       console.log(pageRoute);
       var tl = gsap.timeline({ repeat: 0 });
 
