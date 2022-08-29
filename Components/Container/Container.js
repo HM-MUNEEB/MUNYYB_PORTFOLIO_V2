@@ -18,7 +18,6 @@ export default function Container({ children }) {
   const [pageRoute, setPageRoute] = useState("");
   const LogoContainerRef = useRef();
   const NavigationRef = useRef();
-  const PagesRef = useRef();
 
   useEffect(() => {
     console.log("isCookies: ", getCookies("MunyybInitialTouchDown"));
@@ -99,56 +98,7 @@ export default function Container({ children }) {
       ">1"
     );
   }, []);
-  useEffect(() => {
-    var h = window.innerHeight;
-    var w = window.innerWidth;
-    if (pageRoute == "work") {
-      //mount
-      console.log(pageRoute);
-      var tl = gsap.timeline({ repeat: 0 });
 
-      tl.eventCallback("onComplete", () => {
-        console.log("PAGE TRANSITION  COMPLETED!");
-      });
-
-      //Fading In transition
-      tl.fromTo(
-        PagesRef.current,
-        {
-          x: w,
-        },
-        {
-          opacity: 1,
-          x: 0,
-          autoAlpha: 1,
-          duration: 0.5,
-          ease: "back.easeOut",
-        }
-      );
-    } else if (pageRoute == null) {
-      //unmount
-      console.log(pageRoute);
-      var tl = gsap.timeline({ repeat: 0 });
-
-      tl.eventCallback("onComplete", () => {
-        console.log("PAGE TRANSITION  COMPLETED!");
-      });
-
-      //Fading In transition
-      tl.fromTo(
-        PagesRef.current,
-        {
-          x: 0,
-        },
-        {
-          opacity: 1,
-          x: w,
-          autoAlpha: 1,
-          duration: 0.5,
-        }
-      );
-    }
-  }, [pageRoute]);
   useEffect(() => {
     if (Router.asPath === "/") {
       setPageRoute(null);
@@ -179,9 +129,7 @@ export default function Container({ children }) {
                   ""
                 )}
               </div>
-              <div className={styles.Pages} ref={PagesRef}>
-                <Pages>{children}</Pages>
-              </div>
+              <Pages pageRoute={pageRoute}>{children}</Pages>
               <div ref={NavigationRef} className={styles.NavigationContainer}>
                 <Navigation setPageRoute={setPageRoute} />
               </div>
