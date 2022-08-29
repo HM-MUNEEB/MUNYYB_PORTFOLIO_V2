@@ -1,13 +1,14 @@
 import styles from "./Container.module.css";
 import { useState, useEffect, useRef } from "react";
+import { getCookies, setCookie, hasCookie } from "cookies-next";
+import { useRouter } from "next/router";
+import { gsap } from "gsap";
 import InitialIntro from "../Initial-Intro/InitialIntro";
 import Navigation from "../Navigation/Navigation";
 import LogoContainer from "../Logo-Container/LogoContainer";
-import { gsap } from "gsap";
 import Footer from "../footer/footer";
 import BackgroundCanvas from "../Background/BackgroundCanvas";
-import { getCookies, setCookie, hasCookie } from "cookies-next";
-import { useRouter } from "next/router";
+import Pages from "../Pages-container/pages";
 
 export default function Container({ children }) {
   const Router = useRouter();
@@ -179,7 +180,7 @@ export default function Container({ children }) {
                 )}
               </div>
               <div className={styles.Pages} ref={PagesRef}>
-                {children}
+                <Pages>{children}</Pages>
               </div>
               <div ref={NavigationRef} className={styles.NavigationContainer}>
                 <Navigation setPageRoute={setPageRoute} />
