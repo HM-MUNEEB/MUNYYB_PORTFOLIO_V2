@@ -20,7 +20,6 @@ export default function Container({ children }) {
   const NavigationRef = useRef();
 
   useEffect(() => {
-    console.log("isCookies: ", getCookies("MunyybInitialTouchDown"));
     if (hasCookie("MunyybInitialTouchDown")) {
       setIsInitialIntro(true);
     } else {
