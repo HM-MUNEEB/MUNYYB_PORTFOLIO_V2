@@ -74,10 +74,12 @@ export default function Container({ children }) {
       {
         opacity: 1,
         x: w - w * (3 / 100),
+        scale: 2,
       },
       {
         y: 0,
         x: 0,
+        scale: 1,
         duration: 0.5,
         ease: "back.easeOut",
       },
