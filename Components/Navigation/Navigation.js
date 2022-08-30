@@ -20,11 +20,11 @@ export default function Navigation(props) {
               <p className={styles.Nav_Heading_1}>About</p>
             </li>
           </Link>
-          <li className={styles.NavItem}>
-            <a className={styles.Main_Nav}>
+          <Link href="./contact-me" className={styles.Main_Nav}>
+            <li className={styles.NavItem}>
               <p className={styles.Nav_Heading_1}>Contact Me</p>
-            </a>
-          </li>
+            </li>
+          </Link>
         </ul>
       </div>
     </nav>
