@@ -18,6 +18,7 @@ export default function Container({ children }) {
   const [pageRoute, setPageRoute] = useState("");
   const LogoContainerRef = useRef();
   const NavigationRef = useRef();
+  const FooterRef = useRef();
 
   function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -120,6 +121,18 @@ export default function Container({ children }) {
       },
       ">1"
     );
+    tl.fromTo(
+      FooterRef.current,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 2,
+        ease: "back.easeOut",
+      },
+      ">1"
+    );
   }, []);
 
   useEffect(() => {
@@ -145,7 +158,7 @@ export default function Container({ children }) {
                   <LogoContainer />
                 </div>
                 {isNavigation ? (
-                  <div ref={NavigationRef} className={styles.Footer}>
+                  <div ref={FooterRef} className={styles.Footer}>
                     <Footer />
                   </div>
                 ) : (
