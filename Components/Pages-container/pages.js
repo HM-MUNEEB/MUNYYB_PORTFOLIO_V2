@@ -58,7 +58,7 @@ export default function Pages({ children }, props) {
 
     return () => {
       router.events.off("routeChangeStart", ExitTransition);
-      router.events.off("routeChangeComplete", ExitTransition);
+      //   router.events.off("routeChangeComplete", ExitTransition);
       //   router.events.off("routeChangeError", ExitTransition);
     };
   }, [router]);
