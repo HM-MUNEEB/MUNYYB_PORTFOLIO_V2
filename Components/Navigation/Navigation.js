@@ -7,19 +7,19 @@ export default function Navigation(props) {
     <nav className={styles.Navigation}>
       <div className={styles.Navigation_Container}>
         <ul className={styles.NavItems_container}>
-          <li
-            className={styles.NavItem}
-            onClick={() => props.setPageRoute("work")}
-          >
-            <Link href="./work" className={styles.Main_Nav}>
+          <Link href="./work" className={styles.Main_Nav}>
+            <li
+              className={styles.NavItem}
+              onClick={() => props.setPageRoute("work")}
+            >
               <p className={styles.Nav_Heading_1}>Work</p>
-            </Link>
-          </li>
-          <li className={styles.NavItem}>
-            <a className={styles.Main_Nav}>
+            </li>
+          </Link>
+          <Link href="./about" className={styles.Main_Nav}>
+            <li className={styles.NavItem}>
               <p className={styles.Nav_Heading_1}>About</p>
-            </a>
-          </li>
+            </li>
+          </Link>
           <li className={styles.NavItem}>
             <a className={styles.Main_Nav}>
               <p className={styles.Nav_Heading_1}>Contact Me</p>
