@@ -12,7 +12,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div
-        style={{ height: "100vh", width: "100vw", backgroundColor: "black" }}
+        style={{
+          height: "100vh",
+          width: "100vw",
+          backgroundColor: "white",
+          color: "black",
+        }}
       >
         This is about page
       </div>
