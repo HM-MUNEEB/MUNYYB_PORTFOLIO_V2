@@ -10,8 +10,6 @@
   display: flex;
   justify-content: space-between;
 }
-.IntroAndLogoContainer {
-}
 .typicalTextAnimation {
   height: 100%;
   width: 100%;
@@ -28,6 +26,9 @@
   z-index: 1;
 }
 .MatrixRainFallBackground {
+}
+.logoContainerStack {
+  z-index: 1000;
 }
 /* .Pages {
   position: absolute;

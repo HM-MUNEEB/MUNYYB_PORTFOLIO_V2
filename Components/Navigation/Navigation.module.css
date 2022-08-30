@@ -22,9 +22,6 @@
 .NavItem:hover {
   cursor: pointer;
 }
-.Main_Nav {
-  text-decoration: none;
-}
 .Nav_Heading_1 {
   color: var(--FONT-DIMMED-COLOR);
   font-size: 10vw;
