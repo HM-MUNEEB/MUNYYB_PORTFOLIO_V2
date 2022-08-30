@@ -105,10 +105,9 @@ export default function Container({ children }) {
       },
       {
         opacity: 1,
-        duration: 2,
+        duration: 1,
         ease: "back.easeOut",
-      },
-      ">1"
+      }
     );
   }, []);
 
