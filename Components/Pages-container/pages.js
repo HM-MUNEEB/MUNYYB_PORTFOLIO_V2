@@ -24,7 +24,7 @@ export default function Pages({ children }, props) {
         xPercent: 0,
         autoAlpha: 1,
         duration: 1,
-        ease: "back.easeOut",
+        ease: "power4.out",
       }
     );
   };
