@@ -19,6 +19,30 @@ export default function Container({ children }) {
   const LogoContainerRef = useRef();
   const NavigationRef = useRef();
 
+  function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height,
+    };
+  }
+
+  function useWindowDimensions() {
+    const [windowDimensions, setWindowDimensions] = useState("");
+
+    useEffect(() => {
+      setWindowDimensions(getWindowDimensions());
+      function handleResize() {
+        setWindowDimensions(getWindowDimensions());
+      }
+
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    return windowDimensions;
+  }
+
   useEffect(() => {
     if (hasCookie("MunyybInitialTouchDown")) {
       setIsInitialIntro(true);
@@ -42,8 +66,8 @@ export default function Container({ children }) {
   }
 
   useEffect(() => {
-    var h = window.innerHeight / 2 - 10;
-    var w = window.innerWidth / 2 - 100;
+    var h = window.innerHeight / 2 - 5;
+    var w = window.innerWidth / 2 - 75;
 
     //Timeline Setup
     var tl = gsap.timeline({ repeat: 0 });
