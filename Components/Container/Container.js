@@ -19,31 +19,6 @@ export default function Container({ children }) {
   const LogoContainerRef = useRef();
   const NavigationRef = useRef();
   const FooterRef = useRef();
-
-  function getWindowDimensions() {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-      width,
-      height,
-    };
-  }
-
-  function useWindowDimensions() {
-    const [windowDimensions, setWindowDimensions] = useState("");
-
-    useEffect(() => {
-      setWindowDimensions(getWindowDimensions());
-      function handleResize() {
-        setWindowDimensions(getWindowDimensions());
-      }
-
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    return windowDimensions;
-  }
-
   useEffect(() => {
     if (hasCookie("MunyybInitialTouchDown")) {
       setIsInitialIntro(true);
