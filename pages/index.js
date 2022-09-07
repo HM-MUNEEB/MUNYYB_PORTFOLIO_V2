@@ -5,7 +5,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Munyyb | Onboarding</title>
+        <title>
+          Personal Portfolio website of Munyyb Ur Ryhman | Full-stack Developer
+          & JavaScript Engineer
+        </title>
         <meta
           name="description"
           content="This site is the property of Muneeb ur rehman, who is a Full-stack developer and JavaScript engineer!"
