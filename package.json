@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@use-it/interval": "^1.0.0",
+    "chalk": "^5.0.1",
     "cookies-next": "^2.1.1",
     "gsap": "^3.10.4",
     "next": "12.2.4",
