@@ -27,7 +27,15 @@
   font-size: 10vw;
   font-weight: 400;
 }
+.Nav_Heading_2 {
+  color: var(--FONT-DIMMED-COLOR);
+  font-size: 10vw;
+  font-weight: 400;
+}
 .Nav_Heading_1:hover {
+  color: var(--FONT-MAIN-COLOR);
+}
+.Nav_Heading_2:hover {
   color: var(--FONT-MAIN-COLOR);
 }
 @media screen and (max-width: 700px) {
@@ -38,6 +46,11 @@
   .Nav_Heading_1 {
     color: var(--FONT-DIMMED-COLOR);
     font-size: 14vw;
+    font-weight: 400;
+  }
+  .Nav_Heading_2 {
+    color: var(--FONT-DIMMED-COLOR);
+    font-size: 10vw;
     font-weight: 400;
   }
 }
@@ -51,6 +64,11 @@
     font-size: 16vw;
     font-weight: 400;
   }
+  .Nav_Heading_2 {
+    color: var(--FONT-DIMMED-COLOR);
+    font-size: 11vw;
+    font-weight: 400;
+  }
 }
 @media screen and (max-width: 400px) {
   .NavItem {
@@ -60,6 +78,11 @@
   .Nav_Heading_1 {
     color: var(--FONT-DIMMED-COLOR);
     font-size: 20vw;
+    font-weight: 400;
+  }
+  .Nav_Heading_2 {
+    color: var(--FONT-DIMMED-COLOR);
+    font-size: 11vw;
     font-weight: 400;
   }
 }
