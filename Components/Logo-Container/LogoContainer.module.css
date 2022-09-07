@@ -9,7 +9,7 @@
 .LogoContainer p {
   font-size: 2.5vw;
   font-weight: 800;
-  color: black;
+  color: white;
   mix-blend-mode: difference;
 }
 @media screen and (max-width: 700px) {
