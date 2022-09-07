@@ -97,6 +97,7 @@ const RainStream = (props) => {
                 ? "0px 0px 20px rgba(255, 255, 255, 1)"
                 : undefined,
           }}
+          key={Math.random()}
         >
           {char}
         </a>
@@ -136,8 +137,10 @@ const MatrixRain = (props) => {
 
   return (
     <div className={styles.BackgroundCanvas} ref={containerRef}>
-      {new Array(streamCount).fill().map((_) => (
-        <RainStream height={height} width={width} />
+      {new Array(streamCount).fill().map((i) => (
+        <div className={styles.MatrixRainFallContainer} key={Math.random()}>
+          <RainStream height={height} width={width} />
+        </div>
       ))}
     </div>
   );
