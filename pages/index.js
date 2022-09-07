@@ -11,7 +11,7 @@ export default function Home() {
         </title>
         <meta
           name="description"
-          content="This site is the property of Muneeb ur rehman, who is a Full-stack developer and JavaScript engineer!"
+          content="Creators have their own way of showcasing their porfolio! Munyyb Ur Ryhman is a Full-stack developer and JavaScript engineer, having more then 3+ years of experience in relevant field while working in industry and making products!"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
