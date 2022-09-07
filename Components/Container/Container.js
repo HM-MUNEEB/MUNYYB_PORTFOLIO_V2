@@ -50,7 +50,6 @@ export default function Container({ children }) {
 
     tl.eventCallback("onComplete", () => {
       setIsNavigation(true);
-      console.log("COMPLETED!");
     });
 
     //Fading In transition
