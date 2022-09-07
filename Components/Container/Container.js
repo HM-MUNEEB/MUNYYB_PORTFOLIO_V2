@@ -42,7 +42,7 @@ export default function Container({ children }) {
   }
 
   useEffect(() => {
-    var h = window.innerHeight / 2 - 5;
+    var h = window.innerHeight / 2 + 40;
     var w = window.innerWidth / 2 - 75;
 
     //Timeline Setup
