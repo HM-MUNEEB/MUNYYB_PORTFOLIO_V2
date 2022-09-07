@@ -1,7 +1,6 @@
 .Munyyb {
   height: 100vh;
   width: 100vw;
-  z-index: 10;
 }
 .MunyybContainer {
   height: 100%;
@@ -18,9 +17,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 2;
+  z-index: 3;
 }
 .Footer {
+  z-index: 2;
 }
 .NavigationContainer {
   z-index: 1;
@@ -28,7 +28,6 @@
 .MatrixRainFallBackground {
 }
 .logoContainerStack {
-  z-index: 1000;
 }
 /* .Pages {
   position: absolute;
