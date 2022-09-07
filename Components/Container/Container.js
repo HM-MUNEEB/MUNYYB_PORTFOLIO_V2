@@ -12,7 +12,7 @@ import Pages from "../Pages-container/pages";
 
 export default function Container({ children }) {
   const Router = useRouter();
-  const [isInitialIntro, setIsInitialIntro] = useState("");
+  const [isInitialIntro, setIsInitialIntro] = useState(true);
   const [isNavigation, setIsNavigation] = useState(false);
   const [check, setCheck] = useState(false);
   const [pageRoute, setPageRoute] = useState("");
@@ -23,23 +23,23 @@ export default function Container({ children }) {
     if (hasCookie("MunyybInitialTouchDown")) {
       setIsInitialIntro(true);
     } else {
-      setIsInitialIntro(false);
+      setIsInitialIntro(true);
     }
   }, []);
 
   function afterAnim() {
     setIsNavigation(true);
   }
-  if (isInitialIntro == false) {
-    setInterval(() => {
-      setIsInitialIntro(true);
-      setCheck(true);
-      setCookie("MunyybInitialTouchDown", "Done", {
-        maxAge: 30 * 24 * 60 * 60,
-        path: "/",
-      });
-    }, 22000);
-  }
+  // if (isInitialIntro == false) {
+  //   setInterval(() => {
+  //     setIsInitialIntro(true);
+  //     setCheck(true);
+  //     setCookie("MunyybInitialTouchDown", "Done", {
+  //       maxAge: 30 * 24 * 60 * 60,
+  //       path: "/",
+  //     });
+  //   }, 22000);
+  // }
 
   useEffect(() => {
     var h = window.innerHeight / 2 + 40;
