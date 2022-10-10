@@ -27,9 +27,9 @@ export default function Container({ children }) {
     }
   }, []);
 
-  function afterAnim() {
-    setIsNavigation(true);
-  }
+  // function afterAnim() {
+  //   setIsNavigation(true);
+  // }
   // if (isInitialIntro == false) {
   //   setInterval(() => {
   //     setIsInitialIntro(true);
