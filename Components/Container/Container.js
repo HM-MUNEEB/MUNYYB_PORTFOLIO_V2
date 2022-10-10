@@ -84,7 +84,7 @@ export default function Container({ children }) {
       },
       2
     );
-    //Navigation Status
+
     tl.fromTo(
       NavigationRef.current,
       {
