@@ -8,7 +8,7 @@ export default function Navigation(props) {
       <div className={styles.Navigation_Container}>
         <ul className={styles.NavItems_container}>
           <li className={styles.NavItem2}>
-            <p className={styles.Nav_Heading_2}>Under Construction!</p>
+            <p className={styles.Nav_Heading_2}>Under Dev!</p>
           </li>
           {/* <Link href="./work" className={styles.Main_Nav}>
             <li
