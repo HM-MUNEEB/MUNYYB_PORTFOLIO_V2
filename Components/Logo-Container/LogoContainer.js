@@ -8,9 +8,6 @@ export default function LogoContainer() {
   return (
     <header className={styles.Header}>
       <div className={styles.LogoContainer}>
-        {/* <div className={styles.LogoImgContainer}>
-          <Image src={LogoImg} className={styles.LogoImg} height={40} />
-        </div> */}
         <p>MUNYYB.</p>
       </div>
     </header>
