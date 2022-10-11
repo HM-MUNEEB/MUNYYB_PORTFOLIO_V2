@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import useInterval from "@use-it/interval";
 import styles from "./BackgroundCanvas.module.css";
 
-// Constants
+// Constants for rainfall animation
 const VALID_CHARS = `abcdefghijklmnopqrstuvwxyz0123456789$+-*/=%"'#&_(),.;:?!\\|{}<>[]^~`;
 const STREAM_MUTATION_ODDS = 0.02;
 
