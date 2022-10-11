@@ -63,7 +63,8 @@ export default function Container({ children }) {
 
         duration: 0.5,
       }
-
+    );
+    //Placing logo to original position
     tl.fromTo(
       LogoContainerRef.current,
       {
