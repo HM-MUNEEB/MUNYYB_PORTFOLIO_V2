@@ -23,6 +23,15 @@ export default function Footer() {
             <p>Github</p>
           </a>
         </li>
+        <li>
+          <a
+            href="https://dribbble.com/munyyb"
+            target="_blank"
+            className={styles.listItems}
+          >
+            <p>Dribbble</p>
+          </a>
+        </li>
       </ul>
     </div>
   );
