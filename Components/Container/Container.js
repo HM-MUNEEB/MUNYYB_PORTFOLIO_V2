@@ -12,6 +12,7 @@ import Pages from "../Pages-container/pages";
 
 export default function Container({ children }) {
   const Router = useRouter();
+  const [logoAnim, setLogoAnim] = useState(false)
   const [isInitialIntro, setIsInitialIntro] = useState(true);
   const [isNavigation, setIsNavigation] = useState(false);
   const [check, setCheck] = useState(false);
@@ -81,8 +82,16 @@ export default function Container({ children }) {
       },
       2
     );
+  }, []);
+
+  useEffect(()=>{
+    var h = window.innerHeight / 2 + 40;
+    var w = window.innerWidth / 2 - 75;
+
+    //Timeline Setup
+    var t2 = gsap.timeline({ repeat: 0 });
     //Navigation Status
-    tl.fromTo(
+    t2.fromTo(
       NavigationRef.current,
       {
         opacity: 0,
@@ -94,7 +103,7 @@ export default function Container({ children }) {
       },
       ">1"
     );
-    tl.fromTo(
+    t2.fromTo(
       FooterRef.current,
       {
         opacity: 0,
@@ -105,7 +114,8 @@ export default function Container({ children }) {
         ease: "back.easeOut",
       }
     );
-  }, []);
+
+  }, [isNavigation])
 
   useEffect(() => {
     if (Router.asPath === "/") {
@@ -123,12 +133,12 @@ export default function Container({ children }) {
           ) : (
             <>
               <div className={styles.Stack}>
-                <div
-                  className={styles.logoContainerStack}
-                  ref={LogoContainerRef}
-                >
-                  <LogoContainer />
-                </div>
+                  <div
+                    className={styles.logoContainerStack}
+                    ref={LogoContainerRef}
+                  >
+                    <LogoContainer />
+                  </div>
                 {isNavigation ? (
                   <div ref={FooterRef} className={styles.Footer}>
                     <Footer />
@@ -137,10 +147,13 @@ export default function Container({ children }) {
                   ""
                 )}
               </div>
-              <Pages pageRoute={pageRoute}>{children}</Pages>
-              <div ref={NavigationRef} className={styles.NavigationContainer}>
-                <Navigation setPageRoute={setPageRoute} />
-              </div>
+              {isNavigation ? <>
+                <Pages pageRoute={pageRoute}>{children}</Pages>
+                <div ref={NavigationRef} className={styles.NavigationContainer}>
+                  <Navigation setPageRoute={setPageRoute} />
+                </div>
+              </> : <></>}
+              
             </>
           )}
         </div>
