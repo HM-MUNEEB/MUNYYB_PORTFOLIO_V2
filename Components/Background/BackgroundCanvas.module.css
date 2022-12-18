@@ -1,4 +1,9 @@
-
+@font-face {
+  font-family: matrixFont;
+  src: url("../../public/Fonts/matrixFont.ttf");
+  font-style: normal;
+  font-display: block;
+}
 
 .BackgroundCanvas {
   position: absolute;
@@ -13,7 +18,7 @@
   z-index: 0;
 }
 .RainFallStream {
-  font-family: "matrixFont";
+  font-family: "matrixFont", sans-serif;
   color: rgba(0, 255, 36, 0.1);
   writing-mode: vertical-rl;
   text-orientation: upright;

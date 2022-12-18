@@ -1,15 +1,18 @@
 import styles from "./LogoContainer.module.css";
-import Image from "next/image";
-import LogoImg from "../../public/logo.png";
-import { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { motion } from "framer-motion";
 
 export default function LogoContainer() {
   return (
-    <header className={styles.Header}>
-      <div className={styles.LogoContainer}>
-        <p>MUNYYB.</p>
-      </div>
-    </header>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <header className={styles.Header}>
+        <div className={styles.LogoContainer}>
+          <p>MUNYYB.</p>
+        </div>
+      </header>
+    </motion.div>
   );
 }

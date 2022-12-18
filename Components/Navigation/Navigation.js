@@ -7,10 +7,10 @@ export default function Navigation(props) {
     <nav className={styles.Navigation}>
       <div className={styles.Navigation_Container}>
         <ul className={styles.NavItems_container}>
-          {/* <li className={styles.NavItem2}>
+          <li className={styles.NavItem2}>
             <p className={styles.Nav_Heading_2}>Under Dev!</p>
-          </li> */}
-          <Link href="./work" className={styles.Main_Nav}>
+          </li>
+          {/* <Link href="./work" className={styles.Main_Nav}>
             <li
               className={styles.NavItem}
               onClick={() => props.setPageRoute("work")}
@@ -27,7 +27,7 @@ export default function Navigation(props) {
             <li className={styles.NavItem}>
               <p className={styles.Nav_Heading_1}>Contact Me</p>
             </li>
-          </Link>
+          </Link> */}
         </ul>
       </div>
     </nav>

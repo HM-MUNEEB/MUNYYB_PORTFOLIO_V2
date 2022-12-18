@@ -13,7 +13,7 @@ import Head from "next/head";
 
 export default function Container({ children }) {
   const Router = useRouter();
-  const [logoAnim, setLogoAnim] = useState(false)
+  const [logoAnim, setLogoAnim] = useState(false);
   const [isInitialIntro, setIsInitialIntro] = useState(true);
   const [isNavigation, setIsNavigation] = useState(false);
   const [check, setCheck] = useState(false);
@@ -85,7 +85,7 @@ export default function Container({ children }) {
     );
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     var h = window.innerHeight / 2 + 40;
     var w = window.innerWidth / 2 - 75;
 
@@ -115,8 +115,7 @@ export default function Container({ children }) {
         ease: "back.easeOut",
       }
     );
-
-  }, [isNavigation])
+  }, [isNavigation]);
 
   useEffect(() => {
     if (Router.asPath === "/") {
@@ -125,10 +124,6 @@ export default function Container({ children }) {
   }, [Router.asPath]);
   return (
     <>
-    <Head>
-    <link rel="preload" href="/Fonts/Monoska.ttf" as="font" crossOrigin="anonymous"/>
-    <link rel="preload" href="/Fonts/matrixFont.ttf" as="font" crossOrigin="anonymous"/>
-    </Head>
       <div className={styles.Munyyb}>
         <div className={styles.MunyybContainer}>
           {isInitialIntro === false ? (
@@ -138,12 +133,12 @@ export default function Container({ children }) {
           ) : (
             <>
               <div className={styles.Stack}>
-                  <div
-                    className={styles.logoContainerStack}
-                    ref={LogoContainerRef}
-                  >
-                    <LogoContainer />
-                  </div>
+                <div
+                  className={styles.logoContainerStack}
+                  ref={LogoContainerRef}
+                >
+                  <LogoContainer />
+                </div>
                 {isNavigation ? (
                   <div ref={FooterRef} className={styles.Footer}>
                     <Footer />
@@ -152,13 +147,19 @@ export default function Container({ children }) {
                   ""
                 )}
               </div>
-              {isNavigation ? <>
-                <Pages pageRoute={pageRoute}>{children}</Pages>
-                <div ref={NavigationRef} className={styles.NavigationContainer}>
-                  <Navigation setPageRoute={setPageRoute} />
-                </div>
-              </> : <></>}
-              
+              {isNavigation ? (
+                <>
+                  <Pages pageRoute={pageRoute}>{children}</Pages>
+                  <div
+                    ref={NavigationRef}
+                    className={styles.NavigationContainer}
+                  >
+                    <Navigation setPageRoute={setPageRoute} />
+                  </div>
+                </>
+              ) : (
+                <></>
+              )}
             </>
           )}
         </div>
