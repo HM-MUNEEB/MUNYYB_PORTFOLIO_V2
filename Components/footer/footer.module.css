@@ -1,10 +1,15 @@
 .footerContainer {
+  position: absolute;
+  bottom: 3%;
 }
 .footerList {
   display: inline;
   list-style: none;
   display: flex;
   flex-direction: row;
+}
+.footerList li:first-child {
+  margin-left: 0rem;
 }
 .footerList li {
   margin-left: 1rem;
