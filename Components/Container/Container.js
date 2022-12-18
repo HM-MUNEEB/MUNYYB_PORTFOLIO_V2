@@ -9,6 +9,7 @@ import LogoContainer from "../Logo-Container/LogoContainer";
 import Footer from "../footer/footer";
 import BackgroundCanvas from "../Background/BackgroundCanvas";
 import Pages from "../Pages-container/pages";
+import Head from "next/head";
 
 export default function Container({ children }) {
   const Router = useRouter();
@@ -124,6 +125,10 @@ export default function Container({ children }) {
   }, [Router.asPath]);
   return (
     <>
+    <Head>
+    <link rel="preload" href="/Fonts/Monoska.ttf" as="font" crossOrigin="anonymous"/>
+    <link rel="preload" href="/Fonts/matrixFont.ttf" as="font" crossOrigin="anonymous"/>
+    </Head>
       <div className={styles.Munyyb}>
         <div className={styles.MunyybContainer}>
           {isInitialIntro === false ? (

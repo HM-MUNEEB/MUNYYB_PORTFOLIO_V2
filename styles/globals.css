@@ -6,12 +6,12 @@
   --FONT-DIMMED-COLOR: rgba(255, 255, 255, 0.4);
 }
 
-@font-face {
+/* @font-face {
   font-family: "Monoska";
   src: url("../public/Fonts/Monoska.ttf");
   font-style: normal;
-  display: blocking;
-}
+  font-display: block;
+} */
 html,
 body {
   padding: 0;
